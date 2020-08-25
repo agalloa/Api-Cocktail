@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.Main_Fragment">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:gravity="end"
+       android:padding="4dp"
+       android:orientation="horizontal">
+
+       <com.google.android.material.floatingactionbutton.FloatingActionButton
+           android:id="@+id/btn_guardar_bebida"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginEnd="16dp"
+           android:src="@drawable/ic_baseline_save_24" />
+   </LinearLayout>
+    <TextView
+        android:id="@+id/title_bebida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Nombre Bebida"
+        android:textStyle="italic"
+        android:textSize="25sp"
+        android:textColor="#000000"/>
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/img_bebida"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="200dp"/>
+
+    <TextView
+        android:id="@+id/describe_txt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="20sp"
+        android:text="hola"
+        android:textAlignment="center"
+        android:textColor="#000000"/>
+
+</LinearLayout>

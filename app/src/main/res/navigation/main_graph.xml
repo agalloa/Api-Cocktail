@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/main_Fragment">
+
+    <fragment
+        android:id="@+id/main_Fragment"
+        android:name="com.example.project_api.ui.Main_Fragment"
+        android:label="Bebidas"
+        tools:layout="@layout/fragment_main_">
+        <action
+            android:id="@+id/action_main_Fragment_to_detail_Fragment_Bebida"
+            app:destination="@id/detail_Fragment_Bebida"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_main_Fragment_to_fav_fragment"
+            app:destination="@id/fav_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detail_Fragment_Bebida"
+        android:name="com.example.project_api.ui.Detail_Fragment_Bebida"
+        android:label="Detalles"
+        tools:layout="@layout/fragment_detail_bebida" />
+    <fragment
+        android:id="@+id/fav_fragment"
+        android:name="com.example.project_api.ui.Fav_fragment"
+        android:label="Favoritos"
+        tools:layout="@layout/fragment_fav_fragment" />
+</navigation>
