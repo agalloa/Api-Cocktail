@@ -2,25 +2,21 @@ package com.example.project_api.ui
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.project_api.R
 import com.example.project_api.base.BaseViewHolder
 import com.example.project_api.data.model.bebida
-import kotlinx.android.synthetic.main.bebida_row.view.*
-import kotlinx.android.synthetic.main.fragment_main_.*
+import kotlinx.android.synthetic.main.item_drink.view.*
 
 class MainAdapter(private val context: Context, private val bebidaList: List<bebida>, private val itemClickListener:OnbebidaClickListener):RecyclerView.Adapter<BaseViewHolder<*>>() {
     interface OnbebidaClickListener{
         fun onbebidaClick(bebida: bebida)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
-        return MainViewHolder(LayoutInflater.from(context).inflate(R.layout.bebida_row, parent,false))
+        return MainViewHolder(LayoutInflater.from(context).inflate(R.layout.item_drink, parent,false))
     }
 
     override fun getItemCount(): Int {
