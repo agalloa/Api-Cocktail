@@ -2,17 +2,14 @@ package com.example.project_api.ui.VM
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.example.project_api.data.model.bebidaEntity
+import com.example.project_api.data.model.bebida
 import com.example.project_api.domain.Repositorio
 import com.example.project_api.vo.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-class MainVM @ViewModelInject constructor (private val repositorio: Repositorio):ViewModel() {
-
+class MainVM @ViewModelInject constructor(private val repositorio: Repositorio) : ViewModel() {
     private val bebidaData = MutableLiveData<String>()
-
     fun setBebida(bebidaName: String) {
         bebidaData.value = bebidaName
     }
@@ -31,12 +28,14 @@ class MainVM @ViewModelInject constructor (private val repositorio: Repositorio)
             }
         }
     }
-    fun savebebida(Bebida:bebidaEntity){
+
+    fun savebebida(Bebida: bebida) {
         viewModelScope.launch {
             repositorio.SaveBebida(Bebida)
         }
-   }
-    fun getBebidaFav() = liveData(Dispatchers.IO){
+    }
+
+    fun getBebidaFav() = liveData(Dispatchers.IO) {
         emit(Resource.Loading())
         try {
             emit(repositorio.getFavBebidad())

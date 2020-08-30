@@ -8,30 +8,23 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
+@Entity(tableName = "EntityBebida")
 data class bebida(
     @SerializedName("idDrink")
+    @PrimaryKey
     val bebidaId: String = "",
     @SerializedName("strDrinkThumb")
+    @ColumnInfo(name = "image_bebida")
     val image: String = "",
     @SerializedName("strDrink")
+    @ColumnInfo(name = "nombre_bebida")
     val title: String = "",
     @SerializedName("strInstructions")
+    @ColumnInfo(name = "describe_bebida")
     val describe: String = ""
 ): Parcelable
 
 data class BebidaList(
     @SerializedName("drinks")
     val bebidaList: List<bebida>
-)
-
-@Entity(tableName = "EntityBebida")
-data class bebidaEntity(
-    @PrimaryKey
-    val bebidaId: String,
-    @ColumnInfo(name = "image_bebida")
-    val image: String = "",
-    @ColumnInfo(name = "nombre_bebida")
-    val title: String = "",
-    @ColumnInfo(name = "describe_bebida")
-    val describe: String = ""
 )

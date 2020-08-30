@@ -11,12 +11,20 @@ import com.example.project_api.base.BaseViewHolder
 import com.example.project_api.data.model.bebida
 import kotlinx.android.synthetic.main.item_drink.view.*
 
-class MainAdapter(private val context: Context, private val bebidaList: List<bebida>, private val itemClickListener:OnbebidaClickListener):RecyclerView.Adapter<BaseViewHolder<*>>() {
-    interface OnbebidaClickListener{
+class MainAdapter(
+    private val context: Context,
+    private val bebidaList: List<bebida>,
+    private val itemClickListener: OnbebidaClickListener
+) : RecyclerView.Adapter<BaseViewHolder<*>>() {
+    interface OnbebidaClickListener {
         fun onbebidaClick(bebida: bebida)
+
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
-        return MainViewHolder(LayoutInflater.from(context).inflate(R.layout.item_drink, parent,false))
+        return MainViewHolder(
+            LayoutInflater.from(context).inflate(R.layout.item_drink, parent, false)
+        )
     }
 
     override fun getItemCount(): Int {
@@ -24,18 +32,17 @@ class MainAdapter(private val context: Context, private val bebidaList: List<beb
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {
-        when(holder){
+        when (holder) {
             is MainViewHolder -> holder.bind(bebidaList[position], position)
         }
     }
 
-    inner class MainViewHolder(itemView: View): BaseViewHolder<bebida>(itemView){
+    inner class MainViewHolder(itemView: View) : BaseViewHolder<bebida>(itemView) {
         override fun bind(item: bebida, position: Int) {
             Glide.with(context).load(item.image).into(itemView.img_bebida)
             itemView.txt_title.text = item.title
             itemView.txt_Describe.text = item.describe
-            itemView.setOnClickListener{itemClickListener.onbebidaClick(item)}
+            itemView.setOnClickListener { itemClickListener.onbebidaClick(item) }
         }
-
     }
 }

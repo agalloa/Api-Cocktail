@@ -34,5 +34,9 @@
         android:id="@+id/fav_fragment"
         android:name="com.example.project_api.ui.Fav_fragment"
         android:label="Favoritos"
-        tools:layout="@layout/fragment_fav_fragment" />
+        tools:layout="@layout/fragment_fav_fragment" >
+        <action
+            android:id="@+id/action_fav_fragment_to_detail_Fragment_Bebida"
+            app:destination="@id/detail_Fragment_Bebida" />
+    </fragment>
 </navigation>
