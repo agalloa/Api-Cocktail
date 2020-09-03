@@ -2,7 +2,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#38393B">
     
     <ImageView
         android:id="@+id/img_bebida"
@@ -21,13 +22,16 @@
             android:layout_height="wrap_content"
             android:text="Mojito"
             android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#EDF3FA"/>
         <TextView
             android:id="@+id/txt_Describe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="Muddle mint leaves with sugar and lime juice. Add a splash of soda water and fill the glass with cracked ice."/>
+            android:text="Muddle mint leaves with sugar and lime juice. Add a splash of soda water and fill the glass with cracked ice."
+            android:textColor="#EDF3FA"/>
+
     </LinearLayout>
 </LinearLayout>

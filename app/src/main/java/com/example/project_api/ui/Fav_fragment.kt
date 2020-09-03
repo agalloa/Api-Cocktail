@@ -1,7 +1,6 @@
 package com.example.project_api.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,15 +11,10 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.project_api.vo.Resource
 import com.example.project_api.R
-import com.example.project_api.domain.DataSource
 import com.example.project_api.data.model.bebida
-import com.example.project_api.database
-import com.example.project_api.domain.DaoBebida
-import com.example.project_api.domain.ImplRepo
 import com.example.project_api.ui.VM.MainVM
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_fav_fragment.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class Fav_fragment : Fragment(), MainAdapter.OnbebidaClickListener {
@@ -66,7 +60,6 @@ class Fav_fragment : Fragment(), MainAdapter.OnbebidaClickListener {
         rv_bebidas_fav.addItemDecoration(DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL))
 
     }
-
     override fun onbebidaClick(bebida: bebida) {
 
     }

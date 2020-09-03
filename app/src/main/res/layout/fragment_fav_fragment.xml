@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Fav_fragment">
+    tools:context=".ui.Fav_fragment"
+    android:background="#EDF3FA">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_bebidas_fav"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
     </androidx.recyclerview.widget.RecyclerView>
    
