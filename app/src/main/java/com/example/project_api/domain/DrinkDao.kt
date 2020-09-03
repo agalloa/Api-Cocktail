@@ -7,7 +7,7 @@ import androidx.room.Query
 import com.example.project_api.data.model.bebida
 
 @Dao
-interface DaoBebida {
+interface DrinkDao {
 
     @Query("SELECT * FROM EntityBebida")
     suspend fun obtenerBebidas():List<bebida>

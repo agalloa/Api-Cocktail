@@ -1,4 +1,4 @@
-package com.example.project_api.ui
+package com.example.project_api.ui.Favorites
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,42 +12,44 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.project_api.vo.Resource
 import com.example.project_api.R
 import com.example.project_api.data.model.bebida
-import com.example.project_api.ui.VM.MainVM
+import com.example.project_api.ui.MainAdapter
+import com.example.project_api.ui.VM.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_fav_fragment.*
+import kotlinx.android.synthetic.main.fragment_drinks_favorites.*
 
 @AndroidEntryPoint
-class Fav_fragment : Fragment(), MainAdapter.OnbebidaClickListener {
+class FavoritesFragment : Fragment(), MainAdapter.OnbebidaClickListener {
     private lateinit var adapter: MainAdapter
-    private val viewModel by viewModels<MainVM>()
+    private val viewModel by viewModels<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_fav_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_drinks_favorites, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRv()
         setupOb()
+
     }
-    private fun setupOb(){
-        viewModel.getBebidaFav().observe(viewLifecycleOwner, Observer {result->
+    private fun setupOb() {
+        viewModel.getBebidaFav().observe(viewLifecycleOwner, Observer { result ->
             when (result) {
                 is Resource.Loading -> {
-
                 }
                 is Resource.Success -> {
                     val lista = result.data.map {
-                        bebida(it.bebidaId,it.image,it.title,it.describe)
+                        bebida(it.bebidaId, it.image, it.title, it.describe)
                     }
-                    rv_bebidas_fav.adapter = MainAdapter(requireContext(),lista, this)
+                    rv_bebidas_fav.adapter = MainAdapter(requireContext(), lista, this)
 
                 }
                 is Resource.Failure -> {
@@ -55,13 +57,17 @@ class Fav_fragment : Fragment(), MainAdapter.OnbebidaClickListener {
             }
         })
     }
-    private fun setupRv(){
+    private fun setupRv() {
         rv_bebidas_fav.layoutManager = LinearLayoutManager(requireContext())
-        rv_bebidas_fav.addItemDecoration(DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL))
+        rv_bebidas_fav.addItemDecoration(
+            DividerItemDecoration(
+                requireContext(),
+                DividerItemDecoration.VERTICAL
+            )
+        )
 
     }
+
     override fun onbebidaClick(bebida: bebida) {
-
     }
-
 }

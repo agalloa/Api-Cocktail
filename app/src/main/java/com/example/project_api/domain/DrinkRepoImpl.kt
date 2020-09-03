@@ -4,16 +4,16 @@ import com.example.project_api.data.model.bebida
 import com.example.project_api.vo.Resource
 import javax.inject.Inject
 
-class ImplRepo @Inject constructor (private  val dataSource: DataSource): Repositorio {
+class DrinkRepoImpl @Inject constructor (private  val drinkDataSource: DrinkDataSource): DrinkRepository {
     override suspend fun getBebidaList(bebidaName: String): Resource<List<bebida>> {
-        return dataSource.getBebidaNombre(bebidaName)
+        return drinkDataSource.getBebidaNombre(bebidaName)
     }
 
     override suspend fun getFavBebidad(): Resource<List<bebida>> {
-        return dataSource.getbebidafav()
+        return drinkDataSource.getbebidafav()
     }
 
     override suspend fun SaveBebida(bebida: bebida) {
-       dataSource.savebebidaroom(bebida)
+       drinkDataSource.savebebidaroom(bebida)
     }
 }

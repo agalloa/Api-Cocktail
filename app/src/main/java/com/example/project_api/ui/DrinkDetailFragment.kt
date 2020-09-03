@@ -10,13 +10,13 @@ import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.example.project_api.R
 import com.example.project_api.data.model.bebida
-import com.example.project_api.ui.VM.MainVM
+import com.example.project_api.ui.VM.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_detail_bebida.*
+import kotlinx.android.synthetic.main.fragment_drinks_details.*
 
 @AndroidEntryPoint
-class Detail_Fragment_Bebida : Fragment() {
-    private val viewModel by viewModels<MainVM>()
+class DrinkDetailFragment : Fragment() {
+    private val viewModel by viewModels<MainViewModel>()
     private lateinit var bebida: bebida
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class Detail_Fragment_Bebida : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_detail_bebida, container, false)
+        return inflater.inflate(R.layout.fragment_drinks_details, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

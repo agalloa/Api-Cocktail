@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:background="#38393B"
     android:orientation="vertical"
-    tools:context=".ui.Main_Fragment">
+    tools:context=".ui.MainFragment">
 
     <TextView
         android:id="@+id/title_bebida"

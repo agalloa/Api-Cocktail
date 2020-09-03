@@ -3,12 +3,12 @@ package com.example.project_api.ui.VM
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.example.project_api.data.model.bebida
-import com.example.project_api.domain.Repositorio
+import com.example.project_api.domain.DrinkRepository
 import com.example.project_api.vo.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MainVM @ViewModelInject constructor(private val repositorio: Repositorio) : ViewModel() {
+class MainViewModel @ViewModelInject constructor(private val drinkRepository: DrinkRepository) : ViewModel() {
     private val bebidaData = MutableLiveData<String>()
     fun setBebida(bebidaName: String) {
         bebidaData.value = bebidaName
@@ -22,7 +22,7 @@ class MainVM @ViewModelInject constructor(private val repositorio: Repositorio) 
         liveData(Dispatchers.IO) {
             emit(Resource.Loading())
             try {
-                emit(repositorio.getBebidaList(nombreBebida))
+                emit(drinkRepository.getBebidaList(nombreBebida))
             } catch (e: Exception) {
                 emit(Resource.Failure(e))
             }
@@ -31,14 +31,14 @@ class MainVM @ViewModelInject constructor(private val repositorio: Repositorio) 
 
     fun savebebida(Bebida: bebida) {
         viewModelScope.launch {
-            repositorio.SaveBebida(Bebida)
+            drinkRepository.SaveBebida(Bebida)
         }
     }
 
     fun getBebidaFav() = liveData(Dispatchers.IO) {
         emit(Resource.Loading())
         try {
-            emit(repositorio.getFavBebidad())
+            emit(drinkRepository.getFavBebidad())
         } catch (e: Exception) {
             emit(Resource.Failure(e))
         }

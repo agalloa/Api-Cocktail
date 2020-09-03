@@ -2,7 +2,6 @@ package com.example.project_api.ui
 
 import android.os.Bundle
 import android.view.*
-import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -12,16 +11,15 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.project_api.R
 import com.example.project_api.data.model.bebida
-import com.example.project_api.ui.VM.MainVM
+import com.example.project_api.ui.VM.MainViewModel
 import com.example.project_api.vo.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_main_.*
+import androidx.appcompat.widget.SearchView
 
 @AndroidEntryPoint
-class Main_Fragment : Fragment(), MainAdapter.OnbebidaClickListener {
-    private val viewModel by viewModels<MainVM>()
+class MainFragment : Fragment(), MainAdapter.OnbebidaClickListener { private val viewModel by viewModels<MainViewModel>()
     private lateinit var mainAdapter: MainAdapter
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
@@ -38,7 +36,6 @@ class Main_Fragment : Fragment(), MainAdapter.OnbebidaClickListener {
         super.onViewCreated(view, savedInstanceState)
         setupRV()
         setupObs()
-
     }
 
     private fun setupObs() {
@@ -69,13 +66,16 @@ class Main_Fragment : Fragment(), MainAdapter.OnbebidaClickListener {
         val itemSearch = menu.findItem(R.id.search)
         var ViewBusqueda = itemSearch?.actionView as SearchView
         ViewBusqueda.queryHint = "Buscar"
+
         ViewBusqueda.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 viewModel.setBebida(query!!)
-                return false
+                return true
             }
+
             override fun onQueryTextChange(newText: String?): Boolean {
-                return false
+                viewModel.setBebida(newText!!)
+                return true
             }
         })
     }

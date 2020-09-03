@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.Main_Fragment"
+    tools:context=".ui.MainFragment"
     android:background="#38393B">
 
     <RelativeLayout

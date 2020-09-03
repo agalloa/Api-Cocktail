@@ -1,9 +1,9 @@
 package com.example.project_api.di
 
-import com.example.project_api.data.DataSourceImpl
-import com.example.project_api.domain.DataSource
-import com.example.project_api.domain.ImplRepo
-import com.example.project_api.domain.Repositorio
+import com.example.project_api.data.DrinkDataSourceImpl
+import com.example.project_api.domain.DrinkDataSource
+import com.example.project_api.domain.DrinkRepoImpl
+import com.example.project_api.domain.DrinkRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -14,8 +14,8 @@ import dagger.hilt.android.components.ActivityRetainedComponent
 abstract class ModuleActivity {
 
     @Binds
-    abstract fun ImplRepoBind(implRepo: ImplRepo): Repositorio
+    abstract fun ImplRepoBind(drinkRepoImpl: DrinkRepoImpl): DrinkRepository
 
     @Binds
-    abstract fun DataSourceImplBind(dataSourceImpl: DataSourceImpl) : DataSource
+    abstract fun DataSourceImplBind(drinkDataSourceImpl: DrinkDataSourceImpl) : DrinkDataSource
 }
