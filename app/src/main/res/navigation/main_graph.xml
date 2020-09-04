@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/main_Fragment"
-        android:name="com.example.project_api.ui.MainFragment"
+        android:name="com.example.project_api.views.fragments.MainFragment"
         android:label="Drinks"
         tools:layout="@layout/fragment_main_">
         <action
@@ -27,12 +27,12 @@
     </fragment>
     <fragment
         android:id="@+id/detail_Fragment_Bebida"
-        android:name="com.example.project_api.ui.DrinkDetailFragment"
+        android:name="com.example.project_api.views.fragments.DrinkDetailFragment"
         android:label="Details"
         tools:layout="@layout/fragment_drinks_details" />
     <fragment
         android:id="@+id/fav_fragment"
-        android:name="com.example.project_api.ui.Favorites.FavoritesFragment"
+        android:name="com.example.project_api.views.fragments.FavoritesFragment"
         android:label="Favorites"
         tools:layout="@layout/fragment_drinks_favorites">
         <action

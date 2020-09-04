@@ -1,4 +1,4 @@
-package com.example.project_api.ui
+package com.example.project_api.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.project_api.R
 import com.example.project_api.base.BaseViewHolder
-import com.example.project_api.data.model.bebida
+import com.example.project_api.models.bebida
 import kotlinx.android.synthetic.main.item_drink.view.*
 
-class MainAdapter(private val context: Context, private val bebidaList: List<bebida>,private val itemClickListener: OnbebidaClickListener) :
+class MainAdapter(private val context: Context, private val bebidaList: List<bebida>, private val itemClickListener: OnbebidaClickListener) :
     RecyclerView.Adapter<BaseViewHolder<*>>() {
     interface OnbebidaClickListener {
         fun onbebidaClick(bebida: bebida)

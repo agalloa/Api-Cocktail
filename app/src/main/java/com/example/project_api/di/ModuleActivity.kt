@@ -1,9 +1,9 @@
 package com.example.project_api.di
 
-import com.example.project_api.data.DrinkDataSourceImpl
+import com.example.project_api.db.dao.DrinkDataSourceImpl
 import com.example.project_api.domain.DrinkDataSource
-import com.example.project_api.domain.DrinkRepoImpl
-import com.example.project_api.domain.DrinkRepository
+import com.example.project_api.repositories.DrinkRepoImpl
+import com.example.project_api.repositories.DrinkRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

@@ -1,14 +1,14 @@
-package com.example.project_api.ui.VM
+package com.example.project_api.viewmodels
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.example.project_api.data.model.bebida
-import com.example.project_api.domain.DrinkRepository
+import com.example.project_api.models.bebida
+import com.example.project_api.repositories.DrinkRepository
 import com.example.project_api.vo.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MainViewModel @ViewModelInject constructor(private val drinkRepository: DrinkRepository) : ViewModel() {
+class MainViewModel  @ViewModelInject constructor(private val drinkRepository: DrinkRepository) : ViewModel() {
     private val bebidaData = MutableLiveData<String>()
     fun setBebida(bebidaName: String) {
         bebidaData.value = bebidaName

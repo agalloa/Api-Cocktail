@@ -1,4 +1,4 @@
-package com.example.project_api.ui
+package com.example.project_api.views.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
+import com.example.project_api.viewmodels.MainViewModel
 import com.example.project_api.R
-import com.example.project_api.data.model.bebida
-import com.example.project_api.ui.VM.MainViewModel
+import com.example.project_api.models.bebida
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_drinks_details.*
 

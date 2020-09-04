@@ -1,4 +1,4 @@
-package com.example.project_api.ui.Favorites
+package com.example.project_api.views.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.project_api.vo.Resource
 import com.example.project_api.R
-import com.example.project_api.data.model.bebida
-import com.example.project_api.ui.MainAdapter
-import com.example.project_api.ui.VM.MainViewModel
+import com.example.project_api.models.bebida
+import com.example.project_api.adapters.MainAdapter
+import com.example.project_api.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_drinks_favorites.*
 

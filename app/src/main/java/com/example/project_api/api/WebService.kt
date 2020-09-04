@@ -1,7 +1,6 @@
-package com.example.project_api.domain
+package com.example.project_api.api
 
-import com.example.project_api.data.model.BebidaList
-import com.example.project_api.data.model.bebida
+import com.example.project_api.models.BebidaList
 import retrofit2.http.GET
 import retrofit2.http.Query
 

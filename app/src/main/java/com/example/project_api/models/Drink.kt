@@ -1,4 +1,4 @@
-package com.example.project_api.data.model
+package com.example.project_api.models
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo

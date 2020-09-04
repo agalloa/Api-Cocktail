@@ -1,9 +1,9 @@
-package com.example.project_api.data
+package com.example.project_api.db.dao
 
-import com.example.project_api.data.model.bebida
-import com.example.project_api.domain.DrinkDao
+import com.example.project_api.models.bebida
+import com.example.project_api.db.dao.DrinkDao
 import com.example.project_api.domain.DrinkDataSource
-import com.example.project_api.vo.DrinkRetroClient
+import com.example.project_api.api.DrinkRetroClient
 import com.example.project_api.vo.Resource
 import javax.inject.Inject
 
